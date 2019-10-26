@@ -1,0 +1,52 @@
+C:\Users\f0cuS\source\repos\Chat\Server\obj\Debug\Server.csprojAssemblyReference.cache
+C:\Users\f0cuS\source\repos\Chat\Server\obj\Debug\Server.Server.resources
+C:\Users\f0cuS\source\repos\Chat\Server\obj\Debug\Server.Properties.Resources.resources
+C:\Users\f0cuS\source\repos\Chat\Server\obj\Debug\Server.csproj.GenerateResource.cache
+C:\Users\f0cuS\source\repos\Chat\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
+C:\Users\f0cuS\source\repos\Chat\Server\bin\Debug\Server.exe.config
+C:\Users\f0cuS\source\repos\Chat\Server\bin\Debug\Server.exe
+C:\Users\f0cuS\source\repos\Chat\Server\bin\Debug\Server.pdb
+C:\Users\f0cuS\source\repos\Chat\Server\obj\Debug\Server.exe
+C:\Users\f0cuS\source\repos\Chat\Server\obj\Debug\Server.pdb
+D:\repos\Chat\Server\bin\Debug\Server.exe.config
+D:\repos\Chat\Server\bin\Debug\Server.exe
+D:\repos\Chat\Server\bin\Debug\Server.pdb
+D:\repos\Chat\Server\obj\Debug\Server.csprojAssemblyReference.cache
+D:\repos\Chat\Server\obj\Debug\Server.Server.resources
+D:\repos\Chat\Server\obj\Debug\Server.Properties.Resources.resources
+D:\repos\Chat\Server\obj\Debug\Server.csproj.GenerateResource.cache
+D:\repos\Chat\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
+D:\repos\Chat\Server\obj\Debug\Server.exe
+D:\repos\Chat\Server\obj\Debug\Server.pdb
+D:\repos\Chat - 15.10.2019\Server\bin\Debug\Server.exe.config
+D:\repos\Chat - 15.10.2019\Server\bin\Debug\Server.exe
+D:\repos\Chat - 15.10.2019\Server\bin\Debug\Server.pdb
+D:\repos\Chat - 15.10.2019\Server\obj\Debug\Server.Server.resources
+D:\repos\Chat - 15.10.2019\Server\obj\Debug\Server.Properties.Resources.resources
+D:\repos\Chat - 15.10.2019\Server\obj\Debug\Server.csproj.GenerateResource.cache
+D:\repos\Chat - 15.10.2019\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
+D:\repos\Chat - 15.10.2019\Server\obj\Debug\Server.exe
+D:\repos\Chat - 15.10.2019\Server\obj\Debug\Server.pdb
+D:\repos\Chat - 15.10.2019\Server\obj\Debug\Server.csprojAssemblyReference.cache
+D:\repos\[IT-STEP]Repos\Chat - 15.10.2019\Server\bin\Debug\Server.exe.config
+D:\repos\[IT-STEP]Repos\Chat - 15.10.2019\Server\bin\Debug\Server.exe
+D:\repos\[IT-STEP]Repos\Chat - 15.10.2019\Server\bin\Debug\Server.pdb
+D:\repos\[IT-STEP]Repos\Chat - 15.10.2019\Server\obj\Debug\Server.csprojAssemblyReference.cache
+D:\repos\[IT-STEP]Repos\Chat - 15.10.2019\Server\obj\Debug\Server.Server.resources
+D:\repos\[IT-STEP]Repos\Chat - 15.10.2019\Server\obj\Debug\Server.Properties.Resources.resources
+D:\repos\[IT-STEP]Repos\Chat - 15.10.2019\Server\obj\Debug\Server.csproj.GenerateResource.cache
+D:\repos\[IT-STEP]Repos\Chat - 15.10.2019\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
+D:\repos\[IT-STEP]Repos\Chat - 15.10.2019\Server\obj\Debug\Server.exe
+D:\repos\[IT-STEP]Repos\Chat - 15.10.2019\Server\obj\Debug\Server.pdb
+D:\SocialNetwork_repos\WPF_SN(ChooseName)\Server\bin\Debug\Server.exe.config
+D:\SocialNetwork_repos\WPF_SN(ChooseName)\Server\bin\Debug\Server.exe
+D:\SocialNetwork_repos\WPF_SN(ChooseName)\Server\bin\Debug\Server.pdb
+D:\SocialNetwork_repos\WPF_SN(ChooseName)\Server\obj\Debug\Server.Server.resources
+D:\SocialNetwork_repos\WPF_SN(ChooseName)\Server\obj\Debug\Server.Properties.Resources.resources
+D:\SocialNetwork_repos\WPF_SN(ChooseName)\Server\obj\Debug\Server.csproj.GenerateResource.cache
+D:\SocialNetwork_repos\WPF_SN(ChooseName)\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
+D:\SocialNetwork_repos\WPF_SN(ChooseName)\Server\obj\Debug\Server.exe
+D:\SocialNetwork_repos\WPF_SN(ChooseName)\Server\obj\Debug\Server.pdb
+D:\SocialNetwork_repos\WPF_SN(ChooseName)\Server\bin\Debug\DataBase\NetworkDataBase.mdf
+D:\SocialNetwork_repos\WPF_SN(ChooseName)\Server\bin\Debug\DataBase\NetworkDataBase_log.ldf
+D:\SocialNetwork_repos\WPF_SN(ChooseName)\Server\obj\Debug\Server.csprojAssemblyReference.cache

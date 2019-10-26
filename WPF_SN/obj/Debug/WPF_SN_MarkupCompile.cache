@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\SocialNetwork_repos\WPF_SN(ChooseName)\WPF_SN\App.xaml
-11151548125
+41425654808
 
-16642693638
-15-1405729330
-MainWindow.xaml;
+18-1729038000
+32-847980788
+Views\Auth.xaml;Views\MainWindow.xaml;Views\Register.xaml;Views\RegisterNext.xaml;
 
-True
+False
 

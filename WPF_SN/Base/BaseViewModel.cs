@@ -19,9 +19,6 @@ namespace WPF_SN.Base
                 PropertyChanged(this, new PropertyChangedEventArgs(prop));
         }
 
-
-
-
         public class Command : ICommand
         {
             public delegate void Del();
