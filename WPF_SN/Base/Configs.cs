@@ -22,8 +22,10 @@ namespace WPF_SN.Base
         public const char ARG_SEPARATOR = '\u21AD'; // Разделитель аргументов (внутри данных)
         public const char MSG_SEPARATOR = '\u20AE'; // Разделитель сообщений синхронизации
         //public const char REG_SEPARATOR = '\u21AE'; // 
+        public const char COLUMNDB_SEPARATOR = '\u195A';
+        public const char ROWDB_SEPARATOR = '\u1924';
 
-            /* Статусы работы команд */
+        /* Статусы работы команд */
         public const String STATUS_LOGIN_FREE   = "Логин свободен!";
         public const String STATUS_LOGIN_USED   = "Логин уже используется!";
 
@@ -39,6 +41,10 @@ namespace WPF_SN.Base
 
         public const String STATUS_LOGIN_OK = "Успешная авторизация";
         public const String STATUS_LOGIN_FAIL = "Ошибка авторизации";
+
+        public const String STATUS_DB_OK = "СУБД: OK";
+        public const String STATUS_DB_NULL = "СУБД: NULL";
+        public const String STATUS_DB_FAIL = "СУБД: FAIL";
     }
 
         /* Настройки сервера */

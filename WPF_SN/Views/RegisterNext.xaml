@@ -37,11 +37,12 @@
         <Button Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Top" Width="20" Height="20" Margin="2" 
                Click="btnExitClick" Background="{x:Null}" BorderThickness="0"/>
 
-        <ComboBox ItemsSource="{Binding listCountries}" Grid.Row="1" Margin="15" Foreground="WhiteSmoke" FontSize="20" SelectedIndex="0" BorderBrush="#FF00B4FF" />
+        <!--ItemsSource="{Binding listCountries}"-->
+        <ComboBox ItemsSource="{Binding listCountries}"  Grid.Row="1" Margin="15" Foreground="WhiteSmoke" FontSize="20" SelectedIndex="0" BorderBrush="#FF00B4FF" />
 
         <DockPanel Grid.Row="2">
             <ComboBox x:Name="InternCode" Width="50" Height="50" Margin="15 0 0 0" BorderBrush="#FF00B4FF" />
-            <TextBox Grid.Row="2" Margin="15 15 15 15" Foreground="WhiteSmoke" FontSize="20" Text="Phone number" BorderBrush="#FF00B4FF"/>
+            <TextBox Text="Phone" Grid.Row="2" Margin="15 15 15 15" Foreground="WhiteSmoke" FontSize="20" BorderBrush="#FF00B4FF"/>
         </DockPanel>
 
         <DockPanel Grid.Row="3">

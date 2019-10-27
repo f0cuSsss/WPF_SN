@@ -99,6 +99,7 @@
     <Compile Include="Base\Configs.cs" />
     <Compile Include="Base\ServerAnswer.cs" />
     <Compile Include="Base\StrQueriesDB.cs" />
+    <Compile Include="Commands\RelayCommand.cs" />
     <Compile Include="Models\RegisterNextModel.cs" />
     <Compile Include="ViewModels\RegisterNextViewModel.cs" />
     <Compile Include="Views\Register.xaml.cs">
@@ -122,13 +123,10 @@
     <Compile Include="Base\BaseViewModel.cs" />
     <Compile Include="Base\BoolToVisibilityConverter.cs" />
     <Compile Include="Base\XmlSerializableDictionary.cs" />
-    <Compile Include="ChatContacts\ChatContactsModel.cs" />
     <Compile Include="Views\Auth.xaml.cs">
       <DependentUpon>Auth.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
-    <Compile Include="ChatLog\ChatLogModel.cs" />
-    <Compile Include="ChatLog\ChatLogViewModel.cs" />
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

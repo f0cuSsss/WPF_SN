@@ -50,3 +50,12 @@ D:\SocialNetwork_repos\WPF_SN(ChooseName)\Server\obj\Debug\Server.pdb
 D:\SocialNetwork_repos\WPF_SN(ChooseName)\Server\bin\Debug\DataBase\NetworkDataBase.mdf
 D:\SocialNetwork_repos\WPF_SN(ChooseName)\Server\bin\Debug\DataBase\NetworkDataBase_log.ldf
 D:\SocialNetwork_repos\WPF_SN(ChooseName)\Server\obj\Debug\Server.csprojAssemblyReference.cache
+D:\SocialNetwork_repos\WPF_SN(ChooseName)\Server\bin\Debug\System.Configuration.ConfigurationManager.dll
+D:\SocialNetwork_repos\WPF_SN(ChooseName)\Server\bin\Debug\System.Security.AccessControl.dll
+D:\SocialNetwork_repos\WPF_SN(ChooseName)\Server\bin\Debug\System.Security.Permissions.dll
+D:\SocialNetwork_repos\WPF_SN(ChooseName)\Server\bin\Debug\System.Security.Principal.Windows.dll
+D:\SocialNetwork_repos\WPF_SN(ChooseName)\Server\bin\Debug\System.Configuration.ConfigurationManager.xml
+D:\SocialNetwork_repos\WPF_SN(ChooseName)\Server\bin\Debug\System.Security.AccessControl.xml
+D:\SocialNetwork_repos\WPF_SN(ChooseName)\Server\bin\Debug\System.Security.Permissions.xml
+D:\SocialNetwork_repos\WPF_SN(ChooseName)\Server\bin\Debug\System.Security.Principal.Windows.xml
+D:\SocialNetwork_repos\WPF_SN(ChooseName)\Server\obj\Debug\Server.csproj.CopyComplete

@@ -87,7 +87,7 @@
             this.tbPort.Name = "tbPort";
             this.tbPort.Size = new System.Drawing.Size(132, 21);
             this.tbPort.TabIndex = 1;
-            this.tbPort.Text = "62981";
+            this.tbPort.Text = "59898";
             // 
             // tbIP
             // 

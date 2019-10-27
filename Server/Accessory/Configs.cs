@@ -3,8 +3,8 @@ using System.Net;
 using System.Text;
 
 namespace Server
-{   
-        /* Запросы/Ответы сервера */
+{
+    /* Запросы/Ответы сервера */
     public class Configs
     {
         /* Команды сервера */
@@ -20,7 +20,9 @@ namespace Server
         public const char CMD_SEPARATOR = '~'; // Разделитель команд и данных
         public const char ARG_SEPARATOR = '\u21AD'; // Разделитель аргументов (внутри данных)
         public const char MSG_SEPARATOR = '\u20AE'; // Разделитель сообщений синхронизации
-                                                    //public const char REG_SEPARATOR = '\u21AE'; // 
+        //public const char REG_SEPARATOR = '\u21AE'; // 
+        public const char COLUMNDB_SEPARATOR = '\u195A';
+        public const char ROWDB_SEPARATOR = '\u1924';
 
         /* Статусы работы команд */
         public const String STATUS_LOGIN_FREE = "Логин свободен!";
@@ -38,9 +40,14 @@ namespace Server
 
         public const String STATUS_LOGIN_OK = "Успешная авторизация";
         public const String STATUS_LOGIN_FAIL = "Ошибка авторизации";
+
+
+        public const String STATUS_DB_OK = "СУБД: OK";
+        public const String STATUS_DB_NULL = "СУБД: NULL";
+        public const String STATUS_DB_FAIL = "СУБД: FAIL";
     }
 
-        /* Настройки сервера */
+    /* Настройки сервера */
     public class Ini
     {
         public static string host;

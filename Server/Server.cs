@@ -1,8 +1,10 @@
 ﻿using Server.Accessory;
+using Server.DataBase;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Net;
@@ -59,7 +61,7 @@ namespace Server
             {
                 serverSocket.Bind(Ini.endPoint); // привязываем сокет к пункту назначения
                 serverSocket.Listen(100); // случаем порт, допускаем очередь из 100 запросов, на 101 получит смс - сервер занят
-                ServerLog.Items.Add($"[{DateTime.Now.ToString()}] Сервер успешно запущен...");
+                Invoke(new Action(() => ServerLog.Items.Add($"[{DateTime.Now.ToString()}] Сервер успешно запущен...")));
 
                 byte[] buf = new byte[256]; // буфер для считаных данных
                 string str; // строка для перевода байт в символы
@@ -105,7 +107,7 @@ namespace Server
                                     msg = Configs.STATUS_LOGIN_FREE + Configs.CMD_SEPARATOR + newID;
                                     SRVitem = $"[{receiveTime}]: Пользователь {parts[1]} авторизовался"; // TODO: Переписать! Если ИД присвоено - то пользователь авторизовался
                                 }
-                                ServerLog.Items.Add(SRVitem.ToString());
+                                Invoke(new Action(() => ServerLog.Items.Add(SRVitem.ToString())));
 
                                 /* TODO: Добавить сообщение, что пользователь вошел на сервер */
                             }
@@ -131,7 +133,7 @@ namespace Server
 
                                 if (user_ID.Equals(0))
                                 {
-                                    ServerLog.Items.Add("Проникновене в систему!!!");
+                                    Invoke(new Action(() => ServerLog.Items.Add("Проникновене в систему!!!")));
                                     msg = "Проникновене в систему!!!";
                                     break;
                                 }
@@ -152,7 +154,7 @@ namespace Server
                                 messages.Add(newMSG);
                                 msg = newMSG.ToSendString();
                                 //msg = author + ": " + message;
-                                ServerLog.Items.Add($"[{receiveTime}]: ({args[0]}): {args[1]}");
+                                Invoke(new Action(() => ServerLog.Items.Add($"[{receiveTime}]: ({args[0]}): {args[1]}")));
                             }
                             break;
                         case Configs.LOGOUT_CMD:
@@ -172,7 +174,7 @@ namespace Server
                                     break;
                                 }
 
-                                ServerLog.Items.Add($"Пользователь {args[1]} покинул нас!");
+                                Invoke(new Action(() => ServerLog.Items.Add($"Пользователь {args[1]} покинул нас!")));
                                 // Удаления пользователя user_ID из списка
                                 users.RemoveAll(u => u.ID == user_ID);
 
@@ -230,7 +232,7 @@ namespace Server
                                 }
 
                                 msg = Configs.STATUS_SYNC_OK + Configs.CMD_SEPARATOR + fullMessagesSync;
-                                ServerLog.Items.Add($"Пользователь {curUser.Name} успешно синхронизировался!");
+                                Invoke(new Action(() => ServerLog.Items.Add($"Пользователь {curUser.Name} успешно синхронизировался!")));
                             }
                             break;
                         case Configs.DB_CMD:
@@ -238,7 +240,52 @@ namespace Server
                                 switch (parts[1])
                                 {
                                     case StrQueriesDB.GET_COUNTRYCODE:
+                                        {
+                                            SqlDataReader sdr = null;
+                                            try
+                                            {
 
+                                                sdr = QueryDB.Send(ViewDBEnum.getCountryToCode);
+                                                if (sdr.Equals(null))
+                                                {
+                                                    msg = Configs.STATUS_DB_NULL + Configs.CMD_SEPARATOR + Configs.STATUS_DB_NULL;
+                                                    //break;
+                                                }
+                                                //=====================================================
+                                            }
+                                            catch (Exception ex)
+                                            {
+                                                // msg = Configs.STATUS_DB_NULL + Configs.CMD_SEPARATOR + Configs.STATUS_DB_NULL;
+                                                msg = ex.Message;
+                                                Invoke(new Action(() => ServerLog.Items.Add(msg.ToString())));
+                                                break;
+                                            }
+
+
+                                            String Country = String.Empty;
+                                            String Code = String.Empty;
+                                            msg = Configs.STATUS_DB_OK + Configs.CMD_SEPARATOR;
+                                            while (sdr.Read())
+                                            {
+                                                //if (sdr.GetValue(0).Equals(DBNull.Value) || sdr.GetValue(1).Equals(DBNull.Value))
+                                                    //break;
+                                                Country = sdr.GetValue(0).ToString();
+                                                Code = sdr.GetValue(1).ToString();
+                                                msg += Country + Configs.COLUMNDB_SEPARATOR + Code + Configs.ROWDB_SEPARATOR;
+                                            }
+
+                                            //=====================================================
+                                            // TEST
+
+                                            //msg = Configs.STATUS_DB_OK + Configs.CMD_SEPARATOR
+                                            //    + "This is country!" + Configs.COLUMNDB_SEPARATOR + "This is code!"
+                                            //    + Configs.ROWDB_SEPARATOR
+                                            //    + "This is country!2" + Configs.COLUMNDB_SEPARATOR + "This is code!2" + Configs.COLUMNDB_SEPARATOR;
+
+                                            //=====================================================
+
+
+                                        }
                                         break;
                                 }
                             }
@@ -261,8 +308,9 @@ namespace Server
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Exception: " + ex.Message);
-                throw new Exception(ex.Message);
+                //MessageBox.Show("Exception: " + ex.Message);
+                //Invoke(new Action(() => ServerLog.Items.Add(ex.Message.ToString())));
+                //return;
             }
         }
 
