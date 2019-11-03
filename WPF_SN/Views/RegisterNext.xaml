@@ -9,7 +9,6 @@
         mc:Ignorable="d"
         Title="Regist" Height="550" Width="350" AllowsTransparency="True" WindowStyle="None"
         Background="#FF1D1D1D" WindowStartupLocation="CenterScreen">
-
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>
@@ -37,32 +36,34 @@
         <Button Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Top" Width="20" Height="20" Margin="2" 
                Click="btnExitClick" Background="{x:Null}" BorderThickness="0"/>
 
-        <!--ItemsSource="{Binding listCountries}"-->
-        <ComboBox ItemsSource="{Binding listCountries}"  Grid.Row="1" Margin="15" Foreground="WhiteSmoke" FontSize="20" SelectedIndex="0" BorderBrush="#FF00B4FF" />
+        
+        <ComboBox ItemsSource="{Binding listCountries}" SelectedIndex="{Binding countryIndex}" Grid.Row="1" Margin="15" Foreground="WhiteSmoke"
+                  FontSize="20" BorderBrush="#FF00B4FF" />
 
         <DockPanel Grid.Row="2">
-            <ComboBox x:Name="InternCode" Width="50" Height="50" Margin="15 0 0 0" BorderBrush="#FF00B4FF" />
-            <TextBox Text="Phone" Grid.Row="2" Margin="15 15 15 15" Foreground="WhiteSmoke" FontSize="20" BorderBrush="#FF00B4FF"/>
+            <ComboBox ItemsSource="{Binding listCodes}" SelectedIndex="{Binding codeIndex}" Width="50" Height="50" Margin="15 0 0 0" 
+                      BorderBrush="#FF00B4FF" Foreground="WhiteSmoke" FontSize="20" />
+            <TextBox Text="{Binding Phone, UpdateSourceTrigger=PropertyChanged}" Grid.Row="2" Margin="15 15 15 15" Foreground="WhiteSmoke" 
+                     FontSize="20" BorderBrush="#FF00B4FF"/>
         </DockPanel>
 
         <DockPanel Grid.Row="3">
             <MaterialDesign:PackIcon Kind="Lock" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="5 0 0 15" 
                                      Width="30" Height="30" Foreground="WhiteSmoke"/>
-            <PasswordBox x:Name="Password" Grid.Row="3" Margin="3 15 15 15" Foreground="WhiteSmoke" FontSize="20" BorderBrush="#FF00B4FF"  />
+            <PasswordBox x:Name="Password" LostFocus="Password_LostFocus" Grid.Row="3" Margin="3 15 15 15" Foreground="WhiteSmoke" FontSize="20" BorderBrush="#FF00B4FF"  />
         </DockPanel>
 
         <DockPanel Grid.Row="4">
             <MaterialDesign:PackIcon Kind="Lock" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="5 0 0 15" Width="30" 
                                  Foreground="WhiteSmoke" Height="30"  />
-            <PasswordBox x:Name="Password2" Grid.Row="4" Margin="3 15 15 15" Foreground="WhiteSmoke" FontSize="20" BorderBrush="#FF00B4FF"  />
+            <PasswordBox x:Name="Password2" LostFocus="Password2_LostFocus" Grid.Row="4" Margin="3 15 15 15" Foreground="WhiteSmoke" FontSize="20" BorderBrush="#FF00B4FF"  />
         </DockPanel>
 
 
+        <Button Command="{Binding SaveCommand}" Grid.Row="5" Height="50" Width="300" Content="Confirm" FontSize="22" Background="{x:Null}" 
+                FontFamily="Mon Terminal" BorderBrush="#FF00B4FF" />
 
-
-        <Button Grid.Row="5" Height="50" Width="300" Content="Confirm" FontSize="22" Background="{x:Null}" FontFamily="Mon Terminal" BorderBrush="#FF00B4FF" />
-
-        <Button Grid.Row="6" Height="50" Width="300" Background="{x:Null}" 
+        <Button Command="{Binding SignInCommand}" Grid.Row="6" Height="50" Width="300" Background="{x:Null}" 
                 BorderThickness="1" Content="Sign in" FontSize="22" FontFamily="Times New Roman" BorderBrush="WhiteSmoke" />
 
 

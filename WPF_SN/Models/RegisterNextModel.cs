@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Sockets;
-using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.InteropServices;
+using System.Security;
 using WPF_SN.Base;
 
 namespace WPF_SN.Models
@@ -20,20 +19,50 @@ namespace WPF_SN.Models
         }
         #endregion
 
-        Socket clientSocket;
-        byte[] buf;
-        String str, msg;
-
-
-        //public IEnumerable<String> getCountries()
+        /* TODO: Попробовтаь создать на обчной стринге и проверить */
+        //private SecureString _password;
+        //public String Password
         //{
-        //    List<String> countries = new List<string>();
-        //    countries.Add("Первая");
-        //    countries.Add("Вторая");
-        //    countries.Add("Третья");
-        //    countries.Add("Четвертая");
-        //    return countries;
+        //    get
+        //    {
+        //        if (!_password.Equals(null))
+        //            return SecureStringToString(_password);
+        //        else
+        //        {
+        //            return "Password is null";
+        //        }
+        //    }
+        //    set
+        //    {
+        //        foreach (var item in value)
+        //        {
+        //            _password.AppendChar(item);
+        //        }
+
+        //    }
         //}
+        ///// <summary>
+        ///// Получить String с SecureString
+        ///// </summary>
+        ///// <param name="secureString"></param>
+        ///// <returns></returns>
+        //private String SecureStringToString(SecureString secureString)
+        //{
+        //    IntPtr secStrPtr = IntPtr.Zero;
+        //    try
+        //    {
+        //        secStrPtr = Marshal.SecureStringToGlobalAllocUnicode(secureString);
+        //        return Marshal.PtrToStringUni(secStrPtr);
+        //    }
+        //    finally
+        //    {
+        //        Marshal.ZeroFreeGlobalAllocUnicode(secStrPtr);
+        //    }
+        //}
+
+        public String Password { get; set; }
+
+
 
         public IEnumerable<String> getCountriesCodes()
         {
@@ -44,7 +73,7 @@ namespace WPF_SN.Models
             String serverAnswer = null;
             try
             {
-                serverAnswer = Exchange(msg);
+                serverAnswer = Exchange.Perform(msg);
             }
             catch (Exception ex)
             {
@@ -53,6 +82,7 @@ namespace WPF_SN.Models
             }
 
             List<String> countries = null;
+
 
 
             /* Анализируем ответ сервера */
@@ -96,48 +126,6 @@ namespace WPF_SN.Models
 
         //=========================================================================
 
-        public String Exchange(String msg)
-        {
-            clientSocket = null; // Переменная для цикла сообщений
-            buf = new byte[256]; // буфер для обмена
-            str = String.Empty; // Перевод буфера в строку
-
-            try
-            {
-                Ini.setSettings();
-            }
-            catch
-            {
-                throw new Exception("Некоректная настройка");
-            }
-
-            // Переводим сообщение в байты 
-            buf = Ini.communicationEncoding.GetBytes(msg);
-            try
-            { // Подключаемся к пункту назначения - код как у сервера
-                clientSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-                // Соединяемся...
-                clientSocket.Connect(Ini.endPoint);
-                // Отправляем сообщение
-                clientSocket.Send(buf);
-                // Получаем ответ и переводим в строку
-                str = "";
-                do
-                {
-                    int n = clientSocket.Receive(buf);
-                    str += Ini.communicationEncoding.GetString(buf, 0, n);
-                } while (clientSocket.Available > 0);
-
-
-                // Закрываем сокет
-                clientSocket.Shutdown(SocketShutdown.Both);
-                clientSocket.Close();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            return str;
-        }
+        
     }
 }

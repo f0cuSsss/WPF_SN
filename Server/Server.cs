@@ -51,9 +51,9 @@ namespace Server
             }
             finally
             {
-                //lbStatus.Text = "ON";
-               // lbStatus.ForeColor = Color.Green;
-                //btnStart.Text = "Stop";
+                Invoke(new Action(() => lbStatus.Text = "ON"));
+                Invoke(new Action(() => lbStatus.ForeColor = Color.Green));
+                Invoke(new Action(() => btnStart.Text = "Stop"));
             }
 
             Socket request = null; // сокет для установленного соединения
@@ -241,46 +241,46 @@ namespace Server
                                 {
                                     case StrQueriesDB.GET_COUNTRYCODE:
                                         {
-                                            SqlDataReader sdr = null;
-                                            try
-                                            {
+                                            //SqlDataReader sdr = null;
+                                            //try
+                                            //{
 
-                                                sdr = QueryDB.Send(ViewDBEnum.getCountryToCode);
-                                                if (sdr.Equals(null))
-                                                {
-                                                    msg = Configs.STATUS_DB_NULL + Configs.CMD_SEPARATOR + Configs.STATUS_DB_NULL;
-                                                    //break;
-                                                }
-                                                //=====================================================
-                                            }
-                                            catch (Exception ex)
-                                            {
-                                                // msg = Configs.STATUS_DB_NULL + Configs.CMD_SEPARATOR + Configs.STATUS_DB_NULL;
-                                                msg = ex.Message;
-                                                Invoke(new Action(() => ServerLog.Items.Add(msg.ToString())));
-                                                break;
-                                            }
+                                            //    sdr = QueryDB.Send(ViewDBEnum.getCountryToCode);
+                                            //    if (sdr.Equals(null))
+                                            //    {
+                                            //        msg = Configs.STATUS_DB_NULL + Configs.CMD_SEPARATOR + Configs.STATUS_DB_NULL;
+                                            //        //break;
+                                            //    }
+                                            //    //=====================================================
+                                            //}
+                                            //catch (Exception ex)
+                                            //{
+                                            //    // msg = Configs.STATUS_DB_NULL + Configs.CMD_SEPARATOR + Configs.STATUS_DB_NULL;
+                                            //    msg = ex.Message;
+                                            //    Invoke(new Action(() => ServerLog.Items.Add(msg.ToString())));
+                                            //    break;
+                                            //}
 
 
-                                            String Country = String.Empty;
-                                            String Code = String.Empty;
-                                            msg = Configs.STATUS_DB_OK + Configs.CMD_SEPARATOR;
-                                            while (sdr.Read())
-                                            {
-                                                //if (sdr.GetValue(0).Equals(DBNull.Value) || sdr.GetValue(1).Equals(DBNull.Value))
-                                                    //break;
-                                                Country = sdr.GetValue(0).ToString();
-                                                Code = sdr.GetValue(1).ToString();
-                                                msg += Country + Configs.COLUMNDB_SEPARATOR + Code + Configs.ROWDB_SEPARATOR;
-                                            }
+                                            //String Country = String.Empty;
+                                            //String Code = String.Empty;
+                                            //msg = Configs.STATUS_DB_OK + Configs.CMD_SEPARATOR;
+                                            //while (sdr.Read())
+                                            //{
+                                            //    //if (sdr.GetValue(0).Equals(DBNull.Value) || sdr.GetValue(1).Equals(DBNull.Value))
+                                            //        //break;
+                                            //    Country = sdr.GetValue(0).ToString();
+                                            //    Code = sdr.GetValue(1).ToString();
+                                            //    msg += Country + Configs.COLUMNDB_SEPARATOR + Code + Configs.ROWDB_SEPARATOR;
+                                            //}
 
                                             //=====================================================
                                             // TEST
 
-                                            //msg = Configs.STATUS_DB_OK + Configs.CMD_SEPARATOR
-                                            //    + "This is country!" + Configs.COLUMNDB_SEPARATOR + "This is code!"
-                                            //    + Configs.ROWDB_SEPARATOR
-                                            //    + "This is country!2" + Configs.COLUMNDB_SEPARATOR + "This is code!2" + Configs.COLUMNDB_SEPARATOR;
+                                            msg = Configs.STATUS_DB_OK + Configs.CMD_SEPARATOR
+                                                + "This is country!" + Configs.COLUMNDB_SEPARATOR + "This is code!"
+                                                + Configs.ROWDB_SEPARATOR
+                                                + "This is country!2" + Configs.COLUMNDB_SEPARATOR + "This is code!2" + Configs.COLUMNDB_SEPARATOR;
 
                                             //=====================================================
 

@@ -45,3 +45,5 @@ D:\SocialNetwork_repos\WPF_SN(ChooseName)\WPF_SN\obj\Debug\WPF_SN.csproj.CopyCom
 D:\SocialNetwork_repos\WPF_SN(ChooseName)\WPF_SN\obj\Debug\WPF_SN.exe
 D:\SocialNetwork_repos\WPF_SN(ChooseName)\WPF_SN\obj\Debug\WPF_SN.pdb
 D:\SocialNetwork_repos\WPF_SN(ChooseName)\WPF_SN\obj\Debug\WPF_SN.csprojAssemblyReference.cache
+D:\SocialNetwork_repos\WPF_SN(ChooseName)\WPF_SN\obj\Debug\Views\ForgotPass.g.cs
+D:\SocialNetwork_repos\WPF_SN(ChooseName)\WPF_SN\obj\Debug\Views\ForgotPass.baml

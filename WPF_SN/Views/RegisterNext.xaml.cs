@@ -1,29 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using WPF_SN.Models;
 using WPF_SN.ViewModels;
 
 namespace WPF_SN.Views
 {
-    /// <summary>
-    /// Interaction logic for RegisterNext.xaml
-    /// </summary>
     public partial class RegisterNext : Window
     {
         public RegisterNext()
         {
             InitializeComponent();
-            //this.DataContext = ViewModels.RegisterNextViewModel;
             DataContext = new RegisterNextViewModel();
         }
 
@@ -35,6 +22,27 @@ namespace WPF_SN.Views
         private void btnBackClick(object sender, RoutedEventArgs e)
         {
             this.Hide();
+        }
+
+        private void Password_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (!Password.Password.Equals(String.Empty) && Password.Password.Equals(Password2.Password))
+            {
+                setPassword(Password2.Password);
+            }
+        }
+
+        private void Password2_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (!Password2.Password.Equals(String.Empty) && Password.Password.Equals(Password2.Password))
+            {
+                setPassword(Password2.Password);
+            }
+        }
+
+        private void setPassword(String pass)
+        {
+            RegisterNextModel.getInstance().Password = pass;
         }
     }
 }

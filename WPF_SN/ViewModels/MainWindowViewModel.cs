@@ -8,8 +8,6 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 
-using WPF_SN.ChatContacts;
-using WPF_SN.ChatLog;
 
 
 namespace WPF_SN

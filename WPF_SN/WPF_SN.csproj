@@ -97,11 +97,18 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Base\Configs.cs" />
+    <Compile Include="Base\Exchange.cs" />
     <Compile Include="Base\ServerAnswer.cs" />
     <Compile Include="Base\StrQueriesDB.cs" />
     <Compile Include="Commands\RelayCommand.cs" />
+    <Compile Include="Commands\SignInCommand.cs" />
+    <Compile Include="Models\RegisterModel.cs" />
     <Compile Include="Models\RegisterNextModel.cs" />
     <Compile Include="ViewModels\RegisterNextViewModel.cs" />
+    <Compile Include="ViewModels\RegisterViewModel.cs" />
+    <Compile Include="Views\ForgotPass.xaml.cs">
+      <DependentUpon>ForgotPass.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Register.xaml.cs">
       <DependentUpon>Register.xaml</DependentUpon>
     </Compile>
@@ -109,6 +116,10 @@
       <DependentUpon>RegisterNext.xaml</DependentUpon>
     </Compile>
     <Page Include="Views\Auth.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ForgotPass.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

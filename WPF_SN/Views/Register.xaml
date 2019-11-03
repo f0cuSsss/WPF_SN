@@ -30,35 +30,35 @@
         <DockPanel Grid.Row="1">
             <MaterialDesign:PackIcon Kind="User" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="5 0 0 15" Width="30" 
                                  Foreground="WhiteSmoke" Height="30"  />
-            <TextBox Grid.Row="1" Margin="3 15 15 15" Foreground="WhiteSmoke" FontSize="20" Text="First name" BorderBrush="#FF00B4FF" />
+            <TextBox Text="{Binding FirstName, Mode=TwoWay}" Grid.Row="1" Margin="3 15 15 15" Foreground="WhiteSmoke" FontSize="20" BorderBrush="#FF00B4FF" />
         </DockPanel>
 
         <DockPanel Grid.Row="2">
             <MaterialDesign:PackIcon Kind="User" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="5 0 0 15" Width="30" 
                                  Foreground="WhiteSmoke" Height="30"  />
-            <TextBox Grid.Row="2" Margin="3 15 15 15" Foreground="WhiteSmoke" FontSize="20" Text="Second name" BorderBrush="#FF00B4FF"/>
+            <TextBox Text="{Binding SecondName, Mode=TwoWay}" Grid.Row="2" Margin="3 15 15 15" Foreground="WhiteSmoke" FontSize="20" BorderBrush="#FF00B4FF"/>
         </DockPanel>
 
 
         <DockPanel Grid.Row="3">
             <MaterialDesign:PackIcon Kind="User" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="5 0 0 15" Width="30" 
                                  Foreground="WhiteSmoke" Height="30"  />
-            <TextBox Grid.Row="3" Margin="3 15 15 15" Foreground="WhiteSmoke" FontSize="20" Text="Login" BorderBrush="#FF00B4FF"/>
+            <TextBox Text="{Binding Login, UpdateSourceTrigger=PropertyChanged}"  Grid.Row="3" Margin="3 15 15 15" Foreground="WhiteSmoke" FontSize="20" BorderBrush="#FF00B4FF"/>
         </DockPanel>
         
         <DockPanel Grid.Row="4">
             <MaterialDesign:PackIcon Kind="Email" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="5 0 0 15" Width="30" 
                                  Foreground="WhiteSmoke" Height="30"  />
-            <TextBox Grid.Row="4" Margin="3 15 15 15" Foreground="WhiteSmoke" FontSize="20" Text="Email" BorderBrush="#FF00B4FF" />
+            <TextBox Text="{Binding Email, Mode=TwoWay}" Grid.Row="4" Margin="3 15 15 15" Foreground="WhiteSmoke" FontSize="20" BorderBrush="#FF00B4FF" />
         </DockPanel>
 
-       
 
 
+        <!--Click="btnNextClick"-->
         <Button Grid.Row="5" Height="50" Width="300" Content="Next" FontSize="22" Background="{x:Null}" FontFamily="Mon Terminal"
-                Click="btnNextClick" BorderBrush="#FF00B4FF"/>
+                 Command="{Binding NextCommand}" BorderBrush="#FF00B4FF"/>
 
-        <Button Grid.Row="6" Height="50" Width="300" Background="{x:Null}" 
+        <Button Command="{Binding SignInCommand}" Grid.Row="6" Height="50" Width="300" Background="{x:Null}" 
                 BorderThickness="1" BorderBrush="WhiteSmoke" Content="Sign in" FontSize="22" FontFamily="Times New Roman" />
 
         
