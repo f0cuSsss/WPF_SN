@@ -60,11 +60,11 @@ namespace WPF_SN.Models
         //    }
         //}
 
+
+         /* Так хранить нельзя! */
         public String Password { get; set; }
 
-
-
-        public IEnumerable<String> getCountriesCodes()
+        public Dictionary<String, string> getCountriesCodes()
         {
             // Формируем команду отправки сообщения
             String msg = Configs.DB_CMD + Configs.CMD_SEPARATOR + StrQueriesDB.GET_COUNTRYCODE;
@@ -75,21 +75,21 @@ namespace WPF_SN.Models
             {
                 serverAnswer = Exchange.Perform(msg);
             }
-            catch (Exception ex)
+            catch
             {
                 //throw new Exception(ex.Message);
                 return null;
             }
 
-            List<String> countries = null;
+            //List<String> countries = null;
 
-
+            Dictionary<String, String> countryCode = null;
 
             /* Анализируем ответ сервера */
             String[] parts = serverAnswer.Split(Configs.CMD_SEPARATOR);
             if (Configs.STATUS_DB_OK.Equals(parts[0]))
             {
-                countries = new List<string>();
+                countryCode = new Dictionary<string, string>();
                 String[] argsRow = null;
                 String[] argsCol = null;
                 try
@@ -98,19 +98,15 @@ namespace WPF_SN.Models
                     foreach (var item in argsRow)
                     {
                         argsCol = item.Split(Configs.COLUMNDB_SEPARATOR);
+                        countryCode.Add(argsCol[0], argsCol[1]);
                         if (!item.Equals(String.Empty))
                         {
-                            countries.Add($"{argsCol[0]}");
+                            //countries.Add($"{argsCol[0]}");
+                            //countryCode.Add(argsCol[0], argsCol[1]);
                         }
                     }
 
-                }
-                catch
-                {
-                    //throw;
-                    //return;
-                }
-
+                } catch { }
             }
             else if (Configs.STATUS_DB_FAIL.Equals(parts[0]))
             {
@@ -121,7 +117,45 @@ namespace WPF_SN.Models
 
             }
 
-            return countries;
+
+            ///* Анализируем ответ сервера */
+            //String[] parts = serverAnswer.Split(Configs.CMD_SEPARATOR);
+            //if (Configs.STATUS_DB_OK.Equals(parts[0]))
+            //{
+            //    countries = new List<string>();
+            //    String[] argsRow = null;
+            //    String[] argsCol = null;
+            //    try
+            //    {
+            //        argsRow = parts[1].Split(Configs.ROWDB_SEPARATOR);
+            //        foreach (var item in argsRow)
+            //        {
+            //            argsCol = item.Split(Configs.COLUMNDB_SEPARATOR);
+            //            if (!item.Equals(String.Empty))
+            //            {
+            //                countries.Add($"{argsCol[0]}");
+            //            }
+            //        }
+
+            //    }
+            //    catch
+            //    {
+            //        //throw;
+            //        //return;
+            //    }
+
+            //}
+            //else if (Configs.STATUS_DB_FAIL.Equals(parts[0]))
+            //{
+
+            //}
+            //else
+            //{
+
+            //}
+
+            //return countries;
+            return countryCode;
         }
 
         //=========================================================================

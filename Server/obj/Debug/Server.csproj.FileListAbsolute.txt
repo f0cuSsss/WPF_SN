@@ -38,18 +38,11 @@ D:\repos\[IT-STEP]Repos\Chat - 15.10.2019\Server\obj\Debug\Server.csproj.Generat
 D:\repos\[IT-STEP]Repos\Chat - 15.10.2019\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
 D:\repos\[IT-STEP]Repos\Chat - 15.10.2019\Server\obj\Debug\Server.exe
 D:\repos\[IT-STEP]Repos\Chat - 15.10.2019\Server\obj\Debug\Server.pdb
+D:\SocialNetwork_repos\WPF_SN(ChooseName)\Server\bin\Debug\DataBase\NetworkDataBase.mdf
+D:\SocialNetwork_repos\WPF_SN(ChooseName)\Server\bin\Debug\DataBase\NetworkDataBase_log.ldf
 D:\SocialNetwork_repos\WPF_SN(ChooseName)\Server\bin\Debug\Server.exe.config
 D:\SocialNetwork_repos\WPF_SN(ChooseName)\Server\bin\Debug\Server.exe
 D:\SocialNetwork_repos\WPF_SN(ChooseName)\Server\bin\Debug\Server.pdb
-D:\SocialNetwork_repos\WPF_SN(ChooseName)\Server\obj\Debug\Server.Server.resources
-D:\SocialNetwork_repos\WPF_SN(ChooseName)\Server\obj\Debug\Server.Properties.Resources.resources
-D:\SocialNetwork_repos\WPF_SN(ChooseName)\Server\obj\Debug\Server.csproj.GenerateResource.cache
-D:\SocialNetwork_repos\WPF_SN(ChooseName)\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
-D:\SocialNetwork_repos\WPF_SN(ChooseName)\Server\obj\Debug\Server.exe
-D:\SocialNetwork_repos\WPF_SN(ChooseName)\Server\obj\Debug\Server.pdb
-D:\SocialNetwork_repos\WPF_SN(ChooseName)\Server\bin\Debug\DataBase\NetworkDataBase.mdf
-D:\SocialNetwork_repos\WPF_SN(ChooseName)\Server\bin\Debug\DataBase\NetworkDataBase_log.ldf
-D:\SocialNetwork_repos\WPF_SN(ChooseName)\Server\obj\Debug\Server.csprojAssemblyReference.cache
 D:\SocialNetwork_repos\WPF_SN(ChooseName)\Server\bin\Debug\System.Configuration.ConfigurationManager.dll
 D:\SocialNetwork_repos\WPF_SN(ChooseName)\Server\bin\Debug\System.Security.AccessControl.dll
 D:\SocialNetwork_repos\WPF_SN(ChooseName)\Server\bin\Debug\System.Security.Permissions.dll
@@ -58,4 +51,11 @@ D:\SocialNetwork_repos\WPF_SN(ChooseName)\Server\bin\Debug\System.Configuration.
 D:\SocialNetwork_repos\WPF_SN(ChooseName)\Server\bin\Debug\System.Security.AccessControl.xml
 D:\SocialNetwork_repos\WPF_SN(ChooseName)\Server\bin\Debug\System.Security.Permissions.xml
 D:\SocialNetwork_repos\WPF_SN(ChooseName)\Server\bin\Debug\System.Security.Principal.Windows.xml
+D:\SocialNetwork_repos\WPF_SN(ChooseName)\Server\obj\Debug\Server.Server.resources
+D:\SocialNetwork_repos\WPF_SN(ChooseName)\Server\obj\Debug\Server.Properties.Resources.resources
+D:\SocialNetwork_repos\WPF_SN(ChooseName)\Server\obj\Debug\Server.csproj.GenerateResource.cache
+D:\SocialNetwork_repos\WPF_SN(ChooseName)\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
 D:\SocialNetwork_repos\WPF_SN(ChooseName)\Server\obj\Debug\Server.csproj.CopyComplete
+D:\SocialNetwork_repos\WPF_SN(ChooseName)\Server\obj\Debug\Server.exe
+D:\SocialNetwork_repos\WPF_SN(ChooseName)\Server\obj\Debug\Server.pdb
+D:\SocialNetwork_repos\WPF_SN(ChooseName)\Server\obj\Debug\Server.csprojAssemblyReference.cache

@@ -280,7 +280,7 @@ namespace Server
                                             msg = Configs.STATUS_DB_OK + Configs.CMD_SEPARATOR
                                                 + "This is country!" + Configs.COLUMNDB_SEPARATOR + "This is code!"
                                                 + Configs.ROWDB_SEPARATOR
-                                                + "This is country!2" + Configs.COLUMNDB_SEPARATOR + "This is code!2" + Configs.COLUMNDB_SEPARATOR;
+                                                + "This is country!2" + Configs.COLUMNDB_SEPARATOR + "This is code!2";
 
                                             //=====================================================
 
@@ -306,7 +306,7 @@ namespace Server
                     request.Close();
                 }
             }
-            catch (Exception ex)
+            catch
             {
                 //MessageBox.Show("Exception: " + ex.Message);
                 //Invoke(new Action(() => ServerLog.Items.Add(ex.Message.ToString())));

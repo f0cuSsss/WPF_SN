@@ -19,7 +19,7 @@ namespace WPF_SN.Views
     /// <summary>
     /// Interaction logic for Register.xaml
     /// </summary>
-    public partial class Register : Window
+    public partial class Register : UserControl
     {
         RegisterNext rn;
         public Register()
@@ -34,21 +34,5 @@ namespace WPF_SN.Views
             Environment.Exit(0);
         }
 
-        #region Singleton
-        private static Register instance;
-        public static Register getInstance()
-        {
-            if (instance == null)
-                instance = new Register();
-            return instance;
-        }
-        #endregion
-
-        public void showForm()
-        {
-            this.Hide();
-            rn.ShowDialog();
-            this.Show();
-        }
     }
 }

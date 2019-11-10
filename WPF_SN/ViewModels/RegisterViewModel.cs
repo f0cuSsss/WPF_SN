@@ -3,12 +3,14 @@ using System.Windows;
 using System.Windows.Input;
 using WPF_SN.Base;
 using WPF_SN.Commands;
+using WPF_SN.Interfaces;
 using WPF_SN.Models;
+using WPF_SN.NavigationService;
 using WPF_SN.Views;
 
 namespace WPF_SN.ViewModels
 {
-    class RegisterViewModel : BaseViewModel
+    public class RegisterViewModel : BaseViewModel, IPageViewModel
     {
         private String _firstName;
         public String FirstName
@@ -70,40 +72,63 @@ namespace WPF_SN.ViewModels
             }
         }
 
+        /*=================================*/
+
+        private Double _width;
+        public Double Width
+        {
+            get { return _width; }
+            set
+            {
+                _width = value;
+                //OnPropertyChanged("Wight");
+            }
+        }
+
+        private Double _height;
+        public Double Height
+        {
+            get { return _height; }
+            set
+            {
+                _height = value;
+                //OnPropertyChanged("Height");
+            }
+        }
+
 
         public RegisterViewModel()
         {
-            _nextButton = new RelayCommand(NextCommand_Execute, NextCommand_CanExecute);
-            _signInButton = new RelayCommand(SignInCommand_Execute, () => true);
+            Width = 350; Height = 550;
         }
 
-        private ICommand _nextButton;
-        public ICommand NextCommand
+        private ICommand _toNextReg;
+        public ICommand ToNextReg
         {
-            get { return _nextButton; }
+            get
+            {
+                return _toNextReg ?? (_toNextReg = new RelayCommand(x =>
+                {
+                    Mediator.Notify("ToNextReg", "");
+                }));
+            }
         }
 
-        private ICommand _signInButton;
-        public ICommand SignInCommand
+        /* Команда "Авторизации" */
+        private ICommand _toSignIn;
+        public ICommand ToSignIn
         {
-            get { return _signInButton; }
+            get
+            {
+                return _toSignIn ?? (_toSignIn = new RelayCommand(x =>
+                {
+                    Mediator.Notify("ToSignIn", "");
+                }));
+            }
         }
 
-        public void SignInCommand_Execute()
-        {
-            MessageBox.Show("Sign in command(this)");
-        }
+        public double getWidth() => Width;
 
-
-        public void NextCommand_Execute()
-        {
-            Register.getInstance().showForm();
-        }
-
-        public bool NextCommand_CanExecute() =>      String.IsNullOrEmpty(FirstName) 
-                                                    &&  String.IsNullOrEmpty(SecondName)
-                                                    &&  String.IsNullOrEmpty(Login)
-                                                    &&  String.IsNullOrEmpty(Email)
-                                                    ? false : true;
+        public double getHeight() => Height;
     }
 }

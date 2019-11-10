@@ -1,47 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
+using System.Diagnostics;
 
 namespace WPF_SN.Base
 {
-    class BaseViewModel : INotifyPropertyChanged
+    public class BaseViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public void OnPropertyChanged([CallerMemberName]string prop = "")
+        protected void OnPropertyChanged(string propertyName = "")
         {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(prop));
+            //VerifyPropertyName(propertyName);
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        public class Command : ICommand
+        [Conditional("DEBUG")]
+        private void VerifyPropertyName(string propertyName)
         {
-            public delegate void Del();
-            Del del;
-
-            public Command(Del del)
-            {
-                this.del = del;
-            }
-            public bool CanExecute(object parameter)
-            {
-                return true;
-            }
-            public event EventHandler CanExecuteChanged
-            {
-                add { CommandManager.RequerySuggested += value; }
-                remove { CommandManager.RequerySuggested -= value; }
-            }
-            public void Execute(object parameter)
-            {
-                del();
-            }
-
+            if (TypeDescriptor.GetProperties(this)[propertyName] == null)
+                throw new ArgumentNullException(GetType().Name + " does not contain property: " + propertyName);
         }
     }
 }

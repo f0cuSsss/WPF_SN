@@ -21,7 +21,7 @@ namespace Server.DataBase
             {
                 connection.Open();
             }
-            catch (Exception ex)
+            catch
             {
                 //throw new Exception(ex.Message);
                 return null;
@@ -37,7 +37,7 @@ namespace Server.DataBase
             {
                 SDReader = command.ExecuteReader();
             }
-            catch (Exception ex)
+            catch
             {
                 //throw new Exception(ex.Message);
                 return null;

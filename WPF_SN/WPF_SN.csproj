@@ -97,17 +97,26 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Base\Configs.cs" />
+    <Compile Include="Commands\RelayCommand_v1.cs" />
+    <Compile Include="NavigationService\EventRaiser.cs" />
     <Compile Include="Base\Exchange.cs" />
     <Compile Include="Base\ServerAnswer.cs" />
     <Compile Include="Base\StrQueriesDB.cs" />
     <Compile Include="Commands\RelayCommand.cs" />
     <Compile Include="Commands\SignInCommand.cs" />
+    <Compile Include="Interfaces\IPageViewModel.cs" />
     <Compile Include="Models\RegisterModel.cs" />
     <Compile Include="Models\RegisterNextModel.cs" />
+    <Compile Include="NavigationService\Mediator.cs" />
+    <Compile Include="ViewModels\AuthViewModel.cs" />
+    <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\RegisterNextViewModel.cs" />
     <Compile Include="ViewModels\RegisterViewModel.cs" />
     <Compile Include="Views\ForgotPass.xaml.cs">
       <DependentUpon>ForgotPass.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainView.xaml.cs">
+      <DependentUpon>MainView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Register.xaml.cs">
       <DependentUpon>Register.xaml</DependentUpon>
@@ -123,7 +132,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\MainWindow.xaml">
+    <Page Include="Views\MainView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Messanger.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -137,9 +150,9 @@
     <Compile Include="Views\Auth.xaml.cs">
       <DependentUpon>Auth.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModels\MainWindowViewModel.cs" />
-    <Compile Include="Views\MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="ViewModels\MessangerViewModel.cs" />
+    <Compile Include="Views\Messanger.xaml.cs">
+      <DependentUpon>Messanger.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\Register.xaml">

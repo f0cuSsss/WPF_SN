@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WPF_SN.ViewModels;
 using WPF_SN.Views;
 
 namespace WPF_SN
@@ -18,11 +19,12 @@ namespace WPF_SN
     /// <summary>
     /// Interaction logic for LoginForm.xaml
     /// </summary>
-    public partial class LoginForm : Window
+    public partial class LoginForm : UserControl
     {
         public LoginForm()
         {
             InitializeComponent();
+            DataContext = new AuthViewModel();
         }
 
         private void btnExitClick(object sender, RoutedEventArgs e)
@@ -30,13 +32,6 @@ namespace WPF_SN
             Environment.Exit(0);
         }
 
-        private void btnRegisterClick(object sender, RoutedEventArgs e)
-        {
-            this.Hide();
-            Register reg = new Register();
-            reg.ShowDialog();
-        }
-        // 
 
     }
 }

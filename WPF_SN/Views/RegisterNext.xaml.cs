@@ -6,7 +6,7 @@ using WPF_SN.ViewModels;
 
 namespace WPF_SN.Views
 {
-    public partial class RegisterNext : Window
+    public partial class RegisterNext : UserControl
     {
         public RegisterNext()
         {
@@ -19,10 +19,10 @@ namespace WPF_SN.Views
             Environment.Exit(0);
         }
 
-        private void btnBackClick(object sender, RoutedEventArgs e)
-        {
-            this.Hide();
-        }
+        //private void btnBackClick(object sender, RoutedEventArgs e)
+        //{
+        //    this.Hide();
+        //}
 
         private void Password_LostFocus(object sender, RoutedEventArgs e)
         {

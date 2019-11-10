@@ -1,4 +1,4 @@
-﻿<Window x:Class="WPF_SN.Views.RegisterNext"
+﻿<UserControl x:Class="WPF_SN.Views.RegisterNext"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -7,8 +7,7 @@
         xmlns:local="clr-namespace:WPF_SN.Views"
         xmlns:base="clr-namespace:WPF_SN.Base"
         mc:Ignorable="d"
-        Title="Regist" Height="550" Width="350" AllowsTransparency="True" WindowStyle="None"
-        Background="#FF1D1D1D" WindowStartupLocation="CenterScreen">
+        Width="{Binding Width}" Height="{Binding Height}" Background="#FF1D1D1D">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>
@@ -27,8 +26,8 @@
 
         <MaterialDesign:PackIcon Kind="ArrowLeft" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="40" 
                                  Foreground="WhiteSmoke" Height="40" Margin="2" />
-        <Button Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="40" Height="40" Margin="2" 
-                 Click="btnBackClick" Background="{x:Null}" BorderThickness="0"/>
+        <Button Command="{Binding BackToReg}" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="40" Height="40" Margin="2" 
+                  Background="{x:Null}" BorderThickness="0"/>
 
 
         <MaterialDesign:PackIcon Kind="Clear" Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Top" Width="20" 
@@ -60,13 +59,13 @@
         </DockPanel>
 
 
-        <Button Command="{Binding SaveCommand}" Grid.Row="5" Height="50" Width="300" Content="Confirm" FontSize="22" Background="{x:Null}" 
+        <Button Command="{Binding tryReg}" Grid.Row="5" Height="50" Width="300" Content="Confirm" FontSize="22" Background="{x:Null}" 
                 FontFamily="Mon Terminal" BorderBrush="#FF00B4FF" />
 
-        <Button Command="{Binding SignInCommand}" Grid.Row="6" Height="50" Width="300" Background="{x:Null}" 
+        <Button Command="{Binding ToSignIn}" Grid.Row="6" Height="50" Width="300" Background="{x:Null}" 
                 BorderThickness="1" Content="Sign in" FontSize="22" FontFamily="Times New Roman" BorderBrush="WhiteSmoke" />
 
 
 
     </Grid>
-</Window>
+</UserControl>

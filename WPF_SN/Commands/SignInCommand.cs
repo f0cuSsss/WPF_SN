@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Input;
 
 namespace WPF_SN.Commands
@@ -14,7 +15,7 @@ namespace WPF_SN.Commands
 
         public SignInCommand()
         {
-            _signInButton = new RelayCommand(SignInCommand_Execute, SignInCommand_CanExecute);
+            _signInButton = new RelayCommand_v1(SignInCommand_Execute, SignInCommand_CanExecute);
         }
 
         public void SignInCommand_Execute()
